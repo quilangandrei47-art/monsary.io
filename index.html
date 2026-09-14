@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Marian — 6 Months 💕</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blush: #f8dce5;
+      --pink: #e9a9bd;
+      --lavender: #dcd4ef;
+      --cream: #fffaf4;
+      --gold: #c9a86a;
+      --ink: #4f3c49;
+      --muted: #7c6874;
+      --white: rgba(255,255,255,.72);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 15%, rgba(248,220,229,.75), transparent 30%),
+        radial-gradient(circle at 85% 25%, rgba(220,212,239,.75), transparent 32%),
+        linear-gradient(135deg, #fffaf4 0%, #f8e9ed 48%, #eeeafa 100%);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 90px 22px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .content { width: min(1050px, 100%); position: relative; z-index: 2; }
+
+    /* Floating atmosphere */
+    .floaters { position: fixed; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }
+    .floater {
+      position: absolute;
+      bottom: -40px;
+      opacity: 0;
+      animation: drift linear infinite;
+      filter: drop-shadow(0 4px 8px rgba(150, 90, 120, .12));
+    }
+    .floater:nth-child(1){left:7%;font-size:20px;animation-duration:13s;animation-delay:0s}
+    .floater:nth-child(2){left:19%;font-size:13px;animation-duration:17s;animation-delay:3s}
+    .floater:nth-child(3){left:34%;font-size:17px;animation-duration:14s;animation-delay:7s}
+    .floater:nth-child(4){left:52%;font-size:12px;animation-duration:19s;animation-delay:2s}
+    .floater:nth-child(5){left:68%;font-size:21px;animation-duration:15s;animation-delay:6s}
+    .floater:nth-child(6){left:82%;font-size:14px;animation-duration:18s;animation-delay:4s}
+    .floater:nth-child(7){left:94%;font-size:18px;animation-duration:16s;animation-delay:9s}
+
+    @keyframes drift {
+      0% { transform: translateY(0) translateX(0) rotate(0); opacity: 0; }
+      10% { opacity: .7; }
+      50% { transform: translateY(-55vh) translateX(28px) rotate(130deg); }
+      90% { opacity: .45; }
+      100% { transform: translateY(-115vh) translateX(-22px) rotate(250deg); opacity: 0; }
+    }
+
+    .hero {
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 45%, rgba(255,255,255,.65), transparent 28%),
+        linear-gradient(160deg, rgba(248,220,229,.55), rgba(220,212,239,.55));
+    }
+
+    .eyebrow {
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      font-size: .72rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    h1, h2 {
+      font-family: "Parisienne", cursive;
+      font-weight: 400;
+      color: #714c63;
+      margin: 0;
+    }
+
+    h1 { font-size: clamp(3.4rem, 10vw, 7.2rem); line-height: .95; }
+    h2 { font-size: clamp(2.8rem, 7vw, 5rem); }
+
+    .hero-subtitle {
+      max-width: 600px;
+      margin: 25px auto 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.15rem, 3vw, 1.55rem);
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .scroll-cue {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #896c7c;
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      animation: bob 2s ease-in-out infinite;
+    }
+    .scroll-cue span { display: block; margin-top: 8px; font-size: 1.1rem; }
+    @keyframes bob { 50% { transform: translate(-50%, 7px); } }
+
+    /* Gallery */
+    .gallery-section { background: rgba(255,250,244,.42); }
+    .section-intro { text-align: center; margin-bottom: 45px; }
+    .section-intro p {
+      max-width: 600px;
+      margin: 12px auto 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    .polaroid {
+      background: rgba(255,255,255,.86);
+      padding: 12px 12px 22px;
+      border-radius: 5px;
+      box-shadow: 0 18px 45px rgba(104,72,94,.12);
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+    .polaroid:nth-child(1){transform:rotate(-3deg)}
+    .polaroid:nth-child(2){transform:rotate(2.5deg) translateY(12px)}
+    .polaroid:nth-child(3){transform:rotate(-.5deg)}
+    .polaroid:nth-child(4){transform:rotate(.5deg)}
+    .polaroid:nth-child(5){transform:rotate(-.5deg)}
+    .polaroid:nth-child(6){transform:rotate(2deg)}
+    .polaroid:hover {
+      transform: rotate(0) translateY(-8px) scale(1.025);
+      box-shadow: 0 25px 55px rgba(104,72,94,.2);
+    }
+
+    .photo {
+      aspect-ratio: 4/3;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(248,220,229,.9), rgba(220,212,239,.9)),
+        #f5e8ed;
+      color: #9a788a;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.1rem;
+      text-align: center;
+      position: relative;
+    }
+    .photo::after {
+      content: "♡";
+      position: absolute;
+      font-size: 3rem;
+      opacity: .35;
+      pointer-events: none;
+    }
+    .photo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .polaroid:nth-child(3) .photo img,
+    .polaroid:nth-child(4) .photo img,
+    .polaroid:nth-child(5) .photo img {
+      object-position: center;
+    }
+    .caption {
+      font-family: "Parisienne", cursive;
+      font-size: 1.55rem;
+      text-align: center;
+      margin-top: 10px;
+      color: #765568;
+    }
+
+    /* Letter */
+    .letter-section {
+      background:
+        radial-gradient(circle at 75% 20%, rgba(220,212,239,.5), transparent 25%),
+        radial-gradient(circle at 15% 80%, rgba(248,220,229,.5), transparent 28%);
+    }
+    .letter-wrap { width: min(780px, 100%); }
+    .letter {
+      position: relative;
+      background: rgba(255,253,248,.94);
+      border: 1px solid rgba(201,168,106,.3);
+      border-radius: 4px;
+      padding: clamp(30px, 7vw, 65px);
+      box-shadow: 0 25px 70px rgba(95,66,83,.14);
+    }
+    .letter::before {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(201,168,106,.18);
+      pointer-events: none;
+    }
+    .letter h2 { text-align: center; margin-bottom: 30px; }
+    .letter-body {
+      position: relative;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+      line-height: 1.75;
+      color: #594754;
+    }
+    .letter-body p { margin: 0 0 18px; }
+    .signature {
+      text-align: right;
+      margin-top: 30px;
+      font-family: "Parisienne", cursive;
+      font-size: 2rem;
+      color: #714c63;
+    }
+    .closing-heart { text-align: center; font-size: 1.4rem; color: var(--gold); margin-top: 25px; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 720px) {
+      section { padding: 75px 18px; }
+      .gallery { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+      .polaroid { padding: 8px 8px 16px; }
+      .caption { font-size: 1.25rem; }
+      .letter { padding: 32px 24px; }
+      .letter::before { inset: 8px; }
+    }
+
+    @media (max-width: 470px) {
+      .gallery { grid-template-columns: 1fr; max-width: 340px; margin: auto; }
+      .polaroid:nth-child(n) { transform: rotate(0); }
+      .polaroid:hover { transform: translateY(-5px) scale(1.01); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="floaters" aria-hidden="true">
+    <div class="floater">♡</div><div class="floater">✦</div><div class="floater">♡</div>
+    <div class="floater">✧</div><div class="floater">♡</div><div class="floater">✦</div>
+    <div class="floater">♡</div>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="content reveal">
+        <div class="eyebrow">A little love story</div>
+        <h1>For Marian Danao,<br>happy 6 months 💕</h1>
+        <p class="hero-subtitle">
+          Six beautiful months of laughter, memories, and choosing each other —
+          and I hope this is only the beginning of our story.
+        </p>
+      </div>
+      <a class="scroll-cue" href="#memories" aria-label="Scroll to memories">
+        scroll to our memories
+        <span>↓</span>
+      </a>
+    </section>
+
+    <section class="gallery-section" id="memories">
+      <div class="content">
+        <div class="section-intro reveal">
+          <div class="eyebrow">Little moments, big memories</div>
+          <h2>Our memories</h2>
+        </div>
+        <div class="gallery">
+          <div class="polaroid reveal">
+          <div class="photo">
+             <img src="805958109_2003180203697377_698065921430003971_n.jpg" alt="photo 1">
+          </div>
+            <div class="caption">The beginning of us ♡</div>
+          </div>
+          <div class="polaroid reveal">
+            <div class="photo">
+               <img src="806466077_1750512440045679_5303733985911182538_n.jpg" alt="photo 2">
+            </div>  
+            <div class="caption">My favorite smile</div>
+          </div>
+          <div class="polaroid reveal">
+            <div class="photo">
+               <img src="809585269_4552536151670626_46922462254224470_n.jpg" alt="photo 3">
+            </div> 
+            <div class="caption">Just us, always</div>
+          </div>
+          <div class="polaroid reveal">
+            <div class="photo">
+               <img src="801194754_1532153152017146_8192348179449730051_n.jpg" alt="photo 4">
+            </div> 
+            <div class="caption">A moment I'll keep</div>
+          </div>
+          <div class="polaroid reveal">
+            <div class="photo">
+               <img src="802503209_1381597404129761_5966513722588776450_n.jpg" alt="photo 5">
+            </div> 
+            <div class="caption">You make life sweeter</div>
+          </div>
+          <div class="polaroid reveal">
+            <div class="photo">
+               <img src="802455386_1602663381346244_3068210602276447410_n.jpg" alt="photo 6">
+            </div> 
+            <div class="caption">More memories to come ♡</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="letter-section" id="letter">
+      <div class="letter-wrap">
+        <article class="letter reveal">
+          <h2>A letter for you</h2>
+          <div class="letter-body">
+            <p>My love,</p>
+            <p>Happy 6th monthsary to us! These past six months with you have been filled with so many beautiful memories, laughter, and moments I’ll always treasure. Every day, I feel more grateful to have you in my life.</p>
+            <p>You make ordinary moments feel special just by being there. Your smile, your kindness, and the way you make me feel loved mean more to me than I can put into words. Being with you has shown me how wonderful it is to share life with someone who makes my heart feel so full.</p>
+            <p>Thank you for loving me, supporting me, and being yourself. I’m excited for all the memories still waiting for us—more adventures, more laughter, and more time together.</p>
+            <p>Six months down, and I hope we have many more to go. I love you so much, and I’m incredibly lucky to call you mine.</p>
+            <p>Happy six months, my love. ❤️</p>
+            <div class="signature">Forever yours, HUBBY.</div>
+            <div class="closing-heart">✦ ♡ ✦</div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealElements.forEach(el => observer.observe(el));
+    } else {
+      revealElements.forEach(el => el.classList.add("visible"));
+    }
+  </script>
+</body>
+</html>
